@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${AGROFARM_DB_HOST:localhost}:${AGROFARM_DB_PORT:5433}/${AGROFARM_DB:agrofarm_db}
+    username: ${AGROFARM_USER:agrofarm_user}
+    password: ${AGROFARM_PASSWORD:agrofarm_password}

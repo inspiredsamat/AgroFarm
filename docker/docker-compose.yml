@@ -1,0 +1,11 @@
+version: '3'
+services:
+  agrofarm-db:
+    container_name: agrofarm-db
+    image: postgres:13.3
+    environment:
+        POSTGRES_DB: ${AGROFARM_DB:-agrofarm_db}
+        POSTGRES_USER: ${AGROFARM_USER:-agrofarm_user}
+        POSTGRES_PASSWORD: ${AGROFARM_PASSWORD:-agrofarm_password}
+    ports:
+      - '5433:5432'
