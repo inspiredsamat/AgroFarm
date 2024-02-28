@@ -3,3 +3,15 @@ spring:
     url: jdbc:postgresql://${AGROFARM_DB_HOST:localhost}:${AGROFARM_DB_PORT:5433}/${AGROFARM_DB:agrofarm_db}
     username: ${AGROFARM_USER:agrofarm_user}
     password: ${AGROFARM_PASSWORD:agrofarm_password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  liquibase:
+    change-log: classpath:db/changelog.xml
+
+application:
+  security:
+    jwt:
+      secret-key: 4309ujf034m093k4c0943j80n89cn4389n0348cni3nc3c
+      access-token-expiration-time: 3600000
+      refresh-token-expiration-time: 43200000
