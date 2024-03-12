@@ -2,7 +2,7 @@ package kz.agro.agrofarm.service;
 
 import kz.agro.agrofarm.entity.User;
 import kz.agro.agrofarm.exception.ResourceAlreadyExistsException;
-import kz.agro.agrofarm.model.TokenType;
+import kz.agro.agrofarm.model.enums.TokenType;
 import kz.agro.agrofarm.model.request.SignInRequest;
 import kz.agro.agrofarm.model.request.SignUpRequest;
 import kz.agro.agrofarm.model.response.AuthResponse;
@@ -29,9 +29,9 @@ public class AuthService {
     private final JwtUtils jwtUtils;
 
     public AuthResponse login(SignInRequest signInRequest) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                    signInRequest.getEmail(),
-                    signInRequest.getPassword()));
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(signInRequest.getEmail(),
+                                                        signInRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 

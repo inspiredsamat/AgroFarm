@@ -1,7 +1,7 @@
 package kz.agro.agrofarm.service;
 
 import kz.agro.agrofarm.entity.User;
-import kz.agro.agrofarm.model.ERole;
+import kz.agro.agrofarm.model.enums.ERole;
 import kz.agro.agrofarm.model.request.SignUpRequest;
 import kz.agro.agrofarm.repository.RoleRepository;
 import kz.agro.agrofarm.repository.UserRepository;

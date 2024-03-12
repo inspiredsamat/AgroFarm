@@ -1,7 +1,7 @@
 package kz.agro.agrofarm.entity;
 
 import jakarta.persistence.*;
-import kz.agro.agrofarm.model.ERole;
+import kz.agro.agrofarm.model.enums.ERole;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

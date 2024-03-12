@@ -2,7 +2,7 @@ package kz.agro.agrofarm.repository;
 
 
 import kz.agro.agrofarm.entity.Role;
-import kz.agro.agrofarm.model.ERole;
+import kz.agro.agrofarm.model.enums.ERole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
