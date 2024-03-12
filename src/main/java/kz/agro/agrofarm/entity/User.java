@@ -49,6 +49,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List<Role> roles;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "user")
+    private List<ProductPost> posts;
+
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
