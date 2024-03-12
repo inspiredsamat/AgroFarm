@@ -8,8 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 @Entity

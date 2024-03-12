@@ -17,8 +17,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 @Component

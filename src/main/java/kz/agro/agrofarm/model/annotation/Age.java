@@ -6,8 +6,7 @@ import jakarta.validation.Payload;
 import java.lang.annotation.*;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 @Constraint(validatedBy = AgeValidator.class)

@@ -6,8 +6,7 @@ import jakarta.validation.ConstraintValidatorContext;
 import java.util.regex.Pattern;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 public class PhoneNumberValidator implements ConstraintValidator<PhoneNumber, String> {

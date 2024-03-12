@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 public class UserDetailsImplementation implements UserDetails {

@@ -7,8 +7,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 public class AgeValidator implements ConstraintValidator<Age, LocalDate> {

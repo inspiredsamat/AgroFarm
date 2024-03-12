@@ -13,8 +13,7 @@ import java.security.Key;
 import java.util.*;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 @Component

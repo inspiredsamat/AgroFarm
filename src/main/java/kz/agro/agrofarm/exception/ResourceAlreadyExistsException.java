@@ -1,8 +1,7 @@
 package kz.agro.agrofarm.exception;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 public class ResourceAlreadyExistsException extends RuntimeException {

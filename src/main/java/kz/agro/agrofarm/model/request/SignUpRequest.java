@@ -10,8 +10,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 /**
- * @author inspiredsamat
- * @portfolio <a href="https://inspiredsamat.github.io">Personal portfolio</a>
+ * @author Samat Zhumamuratov
  */
 
 @Getter
