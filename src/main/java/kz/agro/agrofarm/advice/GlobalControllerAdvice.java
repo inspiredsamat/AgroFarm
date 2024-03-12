@@ -1,6 +1,7 @@
 package kz.agro.agrofarm.advice;
 
 import kz.agro.agrofarm.exception.ResourceAlreadyExistsException;
+import kz.agro.agrofarm.exception.ResourceNotFoundException;
 import kz.agro.agrofarm.model.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -36,6 +37,12 @@ public class GlobalControllerAdvice {
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public ErrorResponse handleBadCredentialsException() {
         return new ErrorResponse(HttpStatus.UNAUTHORIZED.value(), "Incorrect email or password", Instant.now());
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorResponse handleResourceNotFoundException(ResourceNotFoundException ex) {
+        return new ErrorResponse(HttpStatus.NOT_FOUND.value(), ex.getMessage(), Instant.now());
     }
 
     @ExceptionHandler(Exception.class)
