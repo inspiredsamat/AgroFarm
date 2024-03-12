@@ -1,4 +1,4 @@
-package kz.agro.agrofarm.model;
+package kz.agro.agrofarm.model.enums;
 
 
 /**
