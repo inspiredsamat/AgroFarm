@@ -42,9 +42,9 @@ public class ProductPostService {
                         .build();
 
         user.getPosts().add(postToCreate);
+        productPostRepository.save(postToCreate);
         userRepository.save(user);
 
-        productPostRepository.save(postToCreate);
         return "Success";
     }
 }
