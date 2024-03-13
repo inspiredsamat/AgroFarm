@@ -6,7 +6,11 @@
 	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet id="1" author="Samat" failOnError="true">
-        <sqlFile path="db/changes/2023_02_26_insert_roles.sql"/>
+        <sqlFile path="db/changes/2024_03_12_create_auth_tables.sql"/>
+    </changeSet>
+
+    <changeSet id="2" author="Samat" failOnError="true">
+        <sqlFile path="db/changes/2024_02_26_insert_roles.sql"/>
     </changeSet>
 
 </databaseChangeLog>
