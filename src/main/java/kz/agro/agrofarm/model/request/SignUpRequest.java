@@ -6,6 +6,7 @@ import kz.agro.agrofarm.model.annotation.Age;
 import kz.agro.agrofarm.model.annotation.PhoneNumber;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
@@ -15,13 +16,14 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@ToString
 public class SignUpRequest {
 
     @NotBlank(message = "Name can not be blank")
     private String name;
 
     @NotBlank(message = "Lastname can not be blank")
-    private String lastName;
+    private String lastname;
 
     @Email(message = "Valid email should be provided")
     @NotBlank(message = "Email can not be blank")
