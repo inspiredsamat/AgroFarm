@@ -9,6 +9,11 @@ spring:
   liquibase:
     change-log: classpath:db/changelog.xml
 
+logging:
+  file:
+    name: Agrofarm.log
+    path: ./logs
+
 application:
   security:
     jwt:
