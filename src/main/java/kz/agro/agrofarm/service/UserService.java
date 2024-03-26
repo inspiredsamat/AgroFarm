@@ -37,7 +37,7 @@ public class UserService {
                 .password(passwordEncoder.encode(signUpRequest.getPassword()))
                 .roles(List.of(roleRepository.findByName(ERole.ROLE_USER)))
                 .name(signUpRequest.getName())
-                .lastName(signUpRequest.getLastName())
+                .lastname(signUpRequest.getLastname())
                 .birthday(signUpRequest.getBirthday())
                 .phoneNumber(signUpRequest.getPhoneNumber())
                 .createdAt(LocalDateTime.now())
