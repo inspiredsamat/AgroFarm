@@ -25,11 +25,11 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "first_name", nullable = false)
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
-    private String lastName;
+    private String lastname;
 
     @Column(nullable = false)
     private LocalDate birthday;
