@@ -5,14 +5,14 @@ import kz.agro.agrofarm.entity.ProductPost;
 import kz.agro.agrofarm.entity.User;
 import kz.agro.agrofarm.exception.ResourceNotFoundException;
 import kz.agro.agrofarm.model.enums.EProductType;
-import kz.agro.agrofarm.model.request.ProductPostCreateRequestDto;
+import kz.agro.agrofarm.model.dto.ProductPostCreateRequestDto;
 import kz.agro.agrofarm.repository.ProductPostRepository;
 import kz.agro.agrofarm.repository.UserRepository;
+import kz.agro.agrofarm.util.AuthUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.security.Principal;
 
 /**
  * @author Samat Zhumamuratov
@@ -26,8 +26,8 @@ public class ProductPostService {
 
     private final UserRepository userRepository;
 
-    public String createNewPost(ProductPostCreateRequestDto postDto, Principal principal) throws IOException {
-        User user = userRepository.findByEmail(principal.getName())
+    public String createNewPost(ProductPostCreateRequestDto postDto) throws IOException {
+        User user = userRepository.findByEmail(AuthUtils.getLoggedInUserEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("User with this email not found"));
 
         ProductPost postToCreate =
@@ -46,5 +46,10 @@ public class ProductPostService {
         userRepository.save(user);
 
         return "Success";
+    }
+
+    public ProductPost getProductById(Long id) {
+        return productPostRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product post with id " + id + " not found"));
     }
 }

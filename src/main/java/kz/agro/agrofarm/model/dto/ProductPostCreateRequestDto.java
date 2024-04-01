@@ -1,4 +1,4 @@
-package kz.agro.agrofarm.model.request;
+package kz.agro.agrofarm.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
