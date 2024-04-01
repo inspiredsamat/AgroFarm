@@ -62,7 +62,12 @@ public class ImageService {
             GenerativeModel model = new GenerativeModel(modelName, vertexAI);
             Content content = ContentMaker.fromMultiModalData(
                     PartMaker.fromMimeTypeAndData("image/jpeg", bytes),
-                    "I need a response in json format what kind of agro product I send you, like vegetable or fruit and name ot it"
+                    "I need a response in which says what kind of agro product I send you, like vegetable or fruit and name ot it," +
+                            "example:" +
+                            "{" +
+                            "   \"type\": \"vegetable\"," +
+                            "   \"name\": \"potato\"" +
+                            "}"
             );
             GenerateContentResponse response = model.generateContent(content);
             return ResponseHandler.getText(response);
