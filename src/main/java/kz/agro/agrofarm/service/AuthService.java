@@ -2,7 +2,7 @@ package kz.agro.agrofarm.service;
 
 import kz.agro.agrofarm.entity.User;
 import kz.agro.agrofarm.exception.ResourceAlreadyExistsException;
-import kz.agro.agrofarm.model.enums.TokenType;
+import kz.agro.agrofarm.model.enums.ETokenType;
 import kz.agro.agrofarm.model.request.SignInRequest;
 import kz.agro.agrofarm.model.request.SignUpRequest;
 import kz.agro.agrofarm.model.response.AuthResponse;
@@ -35,8 +35,8 @@ public class AuthService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        String accessToken = jwtUtils.getTokenByType(TokenType.ACCESS, signInRequest.getEmail());
-        String refreshToken = jwtUtils.getTokenByType(TokenType.REFRESH, signInRequest.getEmail());
+        String accessToken = jwtUtils.getTokenByType(ETokenType.ACCESS, signInRequest.getEmail());
+        String refreshToken = jwtUtils.getTokenByType(ETokenType.REFRESH, signInRequest.getEmail());
 
         return AuthResponse
                 .builder()
@@ -52,8 +52,8 @@ public class AuthService {
 
         User user = userService.save(signUpRequest);
 
-        String accessToken = jwtUtils.getTokenByType(TokenType.ACCESS, user.getEmail());
-        String refreshToken = jwtUtils.getTokenByType(TokenType.REFRESH, user.getEmail());
+        String accessToken = jwtUtils.getTokenByType(ETokenType.ACCESS, user.getEmail());
+        String refreshToken = jwtUtils.getTokenByType(ETokenType.REFRESH, user.getEmail());
 
         return AuthResponse
                 .builder()

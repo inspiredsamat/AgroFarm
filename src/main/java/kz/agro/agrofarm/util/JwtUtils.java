@@ -5,7 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import kz.agro.agrofarm.model.enums.TokenType;
+import kz.agro.agrofarm.model.enums.ETokenType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -28,7 +28,7 @@ public class JwtUtils {
     @Value("${application.security.jwt.refresh-token-expiration-time}")
     private long refreshTokenExpirationTime;
 
-    public String getTokenByType(TokenType tokenType, String email) {
+    public String getTokenByType(ETokenType tokenType, String email) {
         return switch (tokenType) {
             case ACCESS -> generateJwtToken(accessTokenExpirationTime, email);
             case REFRESH -> generateJwtToken(refreshTokenExpirationTime, email);

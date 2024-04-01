@@ -5,6 +5,6 @@ package kz.agro.agrofarm.model.enums;
  * @author Samat Zhumamuratov
  */
 
-public enum TokenType {
+public enum ETokenType {
     ACCESS, REFRESH
 }
