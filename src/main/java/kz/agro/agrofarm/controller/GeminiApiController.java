@@ -36,10 +36,10 @@ public class GeminiApiController {
     private String url;
 
     @GetMapping("/chat")
-    public ResponseEntity<GeminiResponse> chat(@RequestParam String prompt) {
-        log.info("Message from user: {}", prompt);
+    public ResponseEntity<GeminiResponse> chat(@RequestBody String message) {
+        log.info("Message from user: {}", message);
         GeminiRequestBody requestBody = new GeminiRequestBody();
-        requestBody.setContents(List.of(new Content("user", List.of(new Content.Part(prompt)))));
+        requestBody.setContents(List.of(new Content("user", List.of(new Content.Part(message)))));
 
         return ResponseEntity.ok(restTemplate.postForObject(url + key, requestBody, GeminiResponse.class));
     }
