@@ -24,6 +24,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody @Valid SignInRequest request) {
+        log.info("Trying to sign in: {}", request);
         return ResponseEntity.ok(authService.login(request));
     }
 

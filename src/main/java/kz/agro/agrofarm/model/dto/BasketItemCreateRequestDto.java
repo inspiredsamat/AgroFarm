@@ -2,6 +2,7 @@ package kz.agro.agrofarm.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author Samat Zhumamuratov
@@ -9,6 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@ToString
 public class BasketItemCreateRequestDto {
     private Long productId;
     private int quantity;

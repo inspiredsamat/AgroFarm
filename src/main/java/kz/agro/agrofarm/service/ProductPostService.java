@@ -10,9 +10,8 @@ import kz.agro.agrofarm.repository.ProductPostRepository;
 import kz.agro.agrofarm.repository.UserRepository;
 import kz.agro.agrofarm.util.AuthUtils;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
 
 /**
  * @author Samat Zhumamuratov
@@ -26,7 +25,8 @@ public class ProductPostService {
 
     private final UserRepository userRepository;
 
-    public String createNewPost(ProductPostCreateRequestDto postDto) throws IOException {
+    @SneakyThrows
+    public String createNewPost(ProductPostCreateRequestDto postDto) {
         User user = userRepository.findByEmail(AuthUtils.getLoggedInUserEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("User with this email not found"));
 

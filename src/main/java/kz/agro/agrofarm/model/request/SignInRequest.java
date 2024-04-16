@@ -3,6 +3,7 @@ package kz.agro.agrofarm.model.request;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author Samat Zhumamuratov
@@ -10,6 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@ToString
 public class SignInRequest {
 
     @NotBlank

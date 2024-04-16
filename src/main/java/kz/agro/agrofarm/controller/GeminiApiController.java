@@ -3,6 +3,7 @@ package kz.agro.agrofarm.controller;
 import kz.agro.agrofarm.model.Content;
 import kz.agro.agrofarm.model.request.GeminiRequestBody;
 import kz.agro.agrofarm.model.response.GeminiResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RequestMapping("/api/v1/")
 @RestController
+@Slf4j
 public class GeminiApiController {
 
     private final RestTemplate restTemplate;
@@ -35,6 +37,7 @@ public class GeminiApiController {
 
     @GetMapping("/chat")
     public ResponseEntity<GeminiResponse> chat(@RequestParam String prompt) {
+        log.info("Message from user: {}", prompt);
         GeminiRequestBody requestBody = new GeminiRequestBody();
         requestBody.setContents(List.of(new Content("user", List.of(new Content.Part(prompt)))));
 
