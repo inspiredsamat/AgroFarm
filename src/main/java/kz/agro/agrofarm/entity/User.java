@@ -57,4 +57,7 @@ public class User {
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
+    @OneToMany
+    private List<ProductPost> savedProducts;
 }
