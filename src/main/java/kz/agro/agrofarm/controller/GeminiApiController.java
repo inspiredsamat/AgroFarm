@@ -32,7 +32,7 @@ public class GeminiApiController {
     @Value("${gemini.api.url}")
     private String url;
 
-    @GetMapping("/chat")
+    @PostMapping("/chat")
     public ResponseEntity<GeminiResponse> chat(@RequestBody String message) {
         log.info("Message from user: {}", message);
         GeminiRequestBody requestBody = new GeminiRequestBody();
