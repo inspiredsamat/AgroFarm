@@ -1,12 +1,14 @@
 package kz.agro.agrofarm.controller;
 
+import kz.agro.agrofarm.entity.BasketItem;
 import kz.agro.agrofarm.model.dto.BasketItemCreateRequestDto;
-import kz.agro.agrofarm.model.dto.BasketResponseDto;
 import kz.agro.agrofarm.service.BasketService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author Samat Zhumamuratov
@@ -27,7 +29,7 @@ public class BasketController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<BasketResponseDto> getBasketByUserId(@PathVariable Long userId) {
+    public ResponseEntity<List<BasketItem>> getBasketByUserId(@PathVariable Long userId) {
         log.info("Trying to get basket items of user with id: {}", userId);
         return ResponseEntity.ok(basketService.findByUserId(userId));
     }

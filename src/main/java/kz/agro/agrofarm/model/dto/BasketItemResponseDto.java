@@ -1,6 +1,6 @@
 package kz.agro.agrofarm.model.dto;
 
-import kz.agro.agrofarm.entity.ProductPost;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +10,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class BasketItemResponseDto {
-    private ProductPost productPost;
+    private Long productPostId;
     private int quantity;
 }

@@ -60,4 +60,7 @@ public class User {
 
     @OneToMany
     private List<ProductPost> savedProducts;
+
+    @OneToMany
+    private List<BasketItem> inBasketProducts;
 }

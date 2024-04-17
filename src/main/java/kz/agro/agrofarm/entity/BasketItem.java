@@ -1,6 +1,5 @@
 package kz.agro.agrofarm.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,12 +20,14 @@ public class BasketItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_post_id")
-    @JsonIgnore
-    private ProductPost productPost;
+    @Column(nullable = false)
+    private Long productPostId;
 
     @Column(nullable = false)
     private int quantity;
 
+    public BasketItem(Long productPostId, int quantity) {
+        this.productPostId = productPostId;
+        this.quantity = quantity;
+    }
 }
