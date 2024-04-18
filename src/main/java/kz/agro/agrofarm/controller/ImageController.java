@@ -25,6 +25,7 @@ public class ImageController {
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadImage(@RequestParam("image") MultipartFile image) throws IOException {
+        log.info("Trying to upload image with size {}", image.getSize());
         return ResponseEntity.ok(imageService.uploadImage(image));
     }
 
