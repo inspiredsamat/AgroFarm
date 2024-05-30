@@ -24,7 +24,7 @@ application:
 
 gemini:
   api:
-    key: AIzaSyBKgNgruSWtW_Lo5-in3civoEnSqcbN_d8
+    key: AIzaSyAaGIU_Tl-g1qfP_Ir5AvUIfYM_6h8vkzc
     temperature: 0.9
     topK: 1
     topP: 1
@@ -33,5 +33,5 @@ gemini:
 
 vertex:
   projectId: logical-iridium-424814-e7
-  location: asia-northeast3
+  location: us-central1
   modelName: gemini-1.0-pro-vision
