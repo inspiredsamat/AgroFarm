@@ -32,6 +32,6 @@ gemini:
     url: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=
 
 vertex:
-  projectId: linen-jet-416816
+  projectId: logical-iridium-424814-e7
   location: asia-northeast3
   modelName: gemini-1.0-pro-vision
